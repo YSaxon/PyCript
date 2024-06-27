@@ -5,9 +5,9 @@ def execute_command(selectedlang, path, data, headervalue=None):
     try:
         command = []
         if selectedlang == "JavaScript":
-            command.extend(["node", '"' + path + '"'])  # Surround path with double quotes
+            command.extend(["/opt/homebrew/bin/node", '"' + path + '"'])  # Surround path with double quotes
         elif selectedlang == "Python":
-            command.extend(["python", '"' + path + '"'])  # Surround path with double quotes
+            command.extend(["/opt/homebrew/bin/python3", '"' + path + '"'])  # Surround path with double quotes
         elif selectedlang == "Java Jar":
             command.extend(["java", "-jar", '"' + path + '"'])  # Surround path with double quotes
 
