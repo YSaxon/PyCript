@@ -6,8 +6,8 @@ def get_login_shell_env():
     if sys.platform == "win32":
         return os.environ.copy()
     try:
-        # Determine the user's login shell
-        shell = os.environ.get('SHELL', '/bin/sh')
+        import pwd
+        shell = pwd.getpwuid(os.getuid()).pw_shell
 
         # Run the login shell and echo the environment
         cmd = [shell, '-l', '-c', 'env']
