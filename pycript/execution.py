@@ -24,7 +24,7 @@ def get_login_shell_env():
         proc.wait()
         return env
     except Exception as e:
-        logerrors(str(e))
+        print("Error getting login shell env: "+str(e))
         return os.environ.copy()
 
 login_env = get_login_shell_env()
